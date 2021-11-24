@@ -80,8 +80,7 @@
             fullscreenButton.onclick = () => {
               unityInstance.SetFullscreen(1);
             };
-          }
-          alert("callback");
+          setInterval(function(){canvas.focus()},3000);
         }).catch((message) => {
           alert(message);
         });
