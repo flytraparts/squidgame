@@ -14,7 +14,6 @@
     </div>
     <div id="loading-cover" style="display:none;">
       <div id="unity-loading-bar">
-        <div id="unity-logo"><img src="logo.png"></div>
         <div id="unity-progress-bar-empty" style="display: none;">
           <div id="unity-progress-bar-full"></div>
         </div>
@@ -60,7 +59,7 @@
       }());
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        container.className = "unity-mobile";
+        //container.className = "unity-mobile";
         config.devicePixelRatio = 1;
       }
       loadingCover.style.display = "";
@@ -69,19 +68,19 @@
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
-          spinner.style.display = "none";
+          /*spinner.style.display = "none";
           progressBarEmpty.style.display = "";
-          progressBarFull.style.width = `${100 * progress}%`;
+          progressBarFull.style.width = `${100 * progress}%`;*/
         }).then((unityInstance) => {
           loadingCover.style.display = "none";
-          if (canFullscreen) {
+          /*if (canFullscreen) {
             if (!hideFullScreenButton) {
               fullscreenButton.style.display = "";
             }
             fullscreenButton.onclick = () => {
               unityInstance.SetFullscreen(1);
             };
-          }
+          }*/
         }).catch((message) => {
           alert(message);
         });
